@@ -3,7 +3,6 @@ export const isValidEmail = (email) => {
     return emailRegex.test(email);
 };
 
-export const isValidPassword = (password) => {
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+export const isValidPassword = (password) => { return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
     return passwordRegex.test(password);
 };
