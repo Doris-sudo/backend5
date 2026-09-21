@@ -11,7 +11,7 @@ import {
 
 const router = express.Router();
 
-router.get("/", authenticate, getProducts);
+router.get("/:id", authenticate, getProducts);
 
 router.post("/", authenticate, authorize("admin"), addProduct);
 

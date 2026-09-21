@@ -1,10 +1,20 @@
 import products from "../data/products.js";
 export const getProducts = (req, res, next) => {
     try {
+        const id = Number(req.params.id);
+
+        const productId = products.find((product) => product.id === id);
+
+        if(!productId){
+            return res.status(404).json({
+                success: false,
+                message: "Product no found"
+            })
+        }
+
         res.status(200).json({
             success: true,
-            count: products.length,
-            products
+            productId
         });
     }catch(e){
         next(e);
